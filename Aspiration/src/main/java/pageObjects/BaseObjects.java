@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseObjects {
-	WebDriver driver;
+	static WebDriver driver;
 
 	By logo = By.xpath("//*[@id=\"__next\"]/div/header/div[1]/a/svg");
 	
@@ -30,10 +30,20 @@ public class BaseObjects {
 	
 
 	//move to properties file 
-	public void initialize() {
+	public static void initialize() {
 		System.setProperty("webdriver.chrome.driver",
 				"\\Users\\catni\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://www.aspiration.com");
+		driver.manage().window().maximize();
+	}
+	
+	public WebDriver getDriver() {
+		initialize();
+		return driver;
+	}
+	
+	public void closeDriver() {
+		driver.close();
 	}
 }
