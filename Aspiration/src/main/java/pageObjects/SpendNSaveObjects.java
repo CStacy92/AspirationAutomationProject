@@ -5,24 +5,30 @@ import org.openqa.selenium.WebElement;
 
 public class SpendNSaveObjects extends BaseObjects{
 
-	By slogan = By.xpath("//*[@id=\"__next\"]/div/section[1]/div/div[1]/h1");
-	By spendSustHeading = By.xpath("//*[@id=\"__next\"]/div/section[2]/div/h2");
-	By saveMoneyHeading = By.xpath("//*[@id=\"__next\"]/div/section[3]/div[2]/div[1]/h2");
-	By plansHeading = By.xpath("//*[@id=\"__next\"]/div/section[7]/div/div[1]/div[1]/h2");
-	By apyItem = By.xpath("//*[@id=\"__next\"]/div/section[7]/div/div[1]/ul/li[1]");
-	By cashBackItem = By.xpath("//*[@id=\"__next\"]/div/section[7]/div/div[1]/ul/li[2]");
-	By aspirationPlan = By.xpath("//*[@id=\"__next\"]/div/section[7]/div/div[1]/div[1]/div[1]");
-	By aspPlusPlan = By.xpath("//*[@id=\"__next\"]/div/section[7]/div/div[1]/div[1]/div[2]");
+	String productPage = "https://www.aspiration.com/spendandsave";
+	By aspirationPlanLabel = By.xpath("//*[@id=\"__next\"]/div/section[7]/div/div[1]/div[1]/div[1]/div[1]");
+	By aspPlusPlanLabel = By.xpath("//*[@id=\"__next\"]/div/section[7]/div/div[1]/div[1]/div[2]/div[1]");
+	By aspLabelPricing = By.xpath("//*[@id=\"__next\"]/div/section[7]/div/div[1]/div[1]/div[1]/div[2]");
+	By aspPlusLabelPricing = By.xpath("//*[@id=\"__next\"]/div/section[7]/div/div[1]/div[1]/div[2]/div[2]");
+
+	public String productPageURL() {
+		return productPage;
+	}
+	public WebElement aspPlusLabelPricingText() {
+		return driver.findElement(aspPlusLabelPricing);
+	}
+	
+	public WebElement aspLabelPricingText() {
+		return driver.findElement(aspLabelPricing);
+	}
 	
 	public WebElement aspirationPlanText() {
-		return driver.findElement(aspirationPlan);
+		return driver.findElement(aspirationPlanLabel);
 	}
 	
 	public WebElement aspPlusPlanText() {
-		return driver.findElement(aspPlusPlan);
+		return driver.findElement(aspPlusPlanLabel);
 	}
 	
-	public WebElement plansHeading() {
-		return driver.findElement(plansHeading);
-	}
+
 }

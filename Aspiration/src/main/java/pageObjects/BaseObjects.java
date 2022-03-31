@@ -20,6 +20,27 @@ public class BaseObjects {
 	By getStartedBtn = By.xpath("//*[@id=\"__next\"]/div/header/ul[2]/li[2]/button");
 	By signInBtn = By.xpath("//*[@id=\"__next\"]/div/header/ul[2]/li[1]/a");
 	
+	//sign up alert contents
+	By signUpAlert = By.xpath("/html/body/div[4]/div/div");
+	By emailBox = By.xpath("/html/body/div[4]/div/div/div/div[2]/form/div[1]/div/input");
+	By signUpBtn = By.xpath("/html/body/div[4]/div/div/div/div[2]/form/div[2]/button");
+	
+	public WebElement clickSignUpBtn() {
+		return driver.findElement(signUpBtn);
+	}
+	
+	public WebElement enterEmail() {
+		return driver.findElement(emailBox);
+	}
+	
+	public WebElement signUpAlertVisible() {
+		return driver.findElement(signUpAlert);
+	}
+	
+	public WebElement clickGetStarted() {
+		return driver.findElement(getStartedBtn);
+	}
+	
 	public WebElement clicklogo() {
 		return driver.findElement(logo);
 	}
